@@ -1,0 +1,2207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caracola Marina - Escuela de buceo profesional en México. Cursos certificados Open Water, Advanced y especialidades.">
+    <title>Caracola Marina - Cursos de Buceo Certificados | IANTD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <style>
+        /* --- Variables y Estilos Generales --- */
+        :root {
+            --primary-color: #005f73;
+            --secondary-color: #00a896;
+            --accent-color: #f77f00;
+            --light-blue: #e0f7fa;
+            --dark-blue: #023047;
+            --white: #ffffff;
+            --black: #333333;
+            --gray: #666666;
+            --danger: #d90429;
+            --warning: #ffc107;
+            --success: #06d6a0;
+            --surface: rgba(255, 255, 255, 0.9);
+            --surface-dark: rgba(0, 95, 115, 0.1);
+            
+            --primary-gradient: linear-gradient(135deg, #005f73, #0a9396);
+            --secondary-gradient: linear-gradient(135deg, #00a896, #02c39a);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: var(--black);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        h1 { 
+            font-size: 2.8rem; 
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+        
+        h2 { 
+            font-size: 2.2rem; 
+            line-height: 1.3;
+        }
+        
+        h3 { 
+            font-size: 1.6rem; 
+            line-height: 1.4;
+        }
+        
+        h4 { 
+            font-size: 1.2rem; 
+            line-height: 1.5;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--secondary-gradient);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 8px 15px rgba(0, 168, 150, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #0a9396, #005f73);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 168, 150, 0.4);
+            text-decoration: none;
+        }
+
+        .btn:active {
+            transform: translateY(-2px);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .btn:hover::after {
+            transform: translateX(100%);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            box-shadow: 0 8px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background: linear-gradient(135deg, #128C7E, #075E54);
+            box-shadow: 0 12px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, #f77f00, #fcbf49);
+            color: var(--black);
+            box-shadow: 0 8px 15px rgba(247, 127, 0, 0.3);
+        }
+
+        .btn-accent:hover {
+            background: linear-gradient(135deg, #fcbf49, #f77f00);
+            color: var(--black);
+            box-shadow: 0 12px 20px rgba(247, 127, 0, 0.4);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* --- Canvas de Fondo con Burbujas --- */
+        #background-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        /* --- Header y Navegación con Glassmorphism --- */
+        .header {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 95, 115, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(0, 95, 115, 0.95);
+            padding: 12px 0;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.5px;
+        }
+
+        .logo img {
+            height: 45px;
+            margin-right: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        /* --- Hero Section con Animación --- */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 95, 115, 0.8), rgba(0, 168, 150, 0.6)), 
+                        url('images/hero-bg.jpg') no-repeat center center/cover;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        /* --- Sección de Cursos con Efecto Parallax --- */
+        .courses {
+            background-color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .course-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            transition: all 0.5s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .course-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        .course-card-img {
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .course-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .course-card:hover .course-card-img img {
+            transform: scale(1.1);
+        }
+
+        .course-card-content {
+            padding: 30px;
+            background: linear-gradient(to bottom, #ffffff, #f8fdff);
+        }
+
+        .course-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .course-card p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .course-card-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 30px;
+            background: rgba(0, 168, 150, 0.1);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .course-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .course-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .course-features li:last-child {
+            border-bottom: none;
+        }
+
+        .course-features li:hover {
+            transform: translateX(5px);
+        }
+
+        .course-features li i {
+            margin-right: 12px;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        /* --- Sección de Información Detallada --- */
+        .info-section {
+            background-color: var(--light-blue);
+            position: relative;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            align-items: start;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--secondary-color);
+            transition: all 0.5s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .info-card.negative {
+            border-left-color: var(--danger);
+        }
+
+        .info-card h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            color: var(--dark-blue);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .info-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 3px;
+        }
+        
+        .info-card.negative h3::after {
+            background: var(--danger);
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .info-card ul li:hover {
+            transform: translateX(5px);
+        }
+
+        .info-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .info-card ul li i {
+            margin-right: 12px;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .info-card.negative ul li i {
+            color: var(--danger);
+        }
+
+        /* --- Sección de Estadísticas --- */
+        .stats-section {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            backdrop-filter: blur(5px);
+            transition: all 0.4s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        /* --- Sección de Instructor --- */
+        .instructor-section {
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .instructor-profile {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .instructor-img {
+            flex: 0 0 40%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .instructor-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .instructor-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .instructor-info {
+            flex: 1;
+        }
+
+        .instructor-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .certification {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .instructor-timeline {
+            margin-top: 30px;
+            position: relative;
+            padding-left: 30px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 3px var(--secondary-color);
+        }
+
+        .timeline-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        /* --- Sección de Galería con Lightbox --- */
+        .gallery-section {
+            background-color: var(--light-blue);
+            position: relative;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+            width: 100%;
+            padding-top: 100%;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 95, 115, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 3rem;
+            opacity: 0.8;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .close-lightbox:hover {
+            opacity: 1;
+        }
+
+        /* --- Sección de Testimonios con Carousel --- */
+        .testimonials {
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .testimonials-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-slide {
+            padding: 60px;
+            background: var(--white);
+            display: none;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .testimonial-content {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--dark-blue);
+            margin-bottom: 30px;
+            line-height: 1.8;
+            position: relative;
+            padding: 0 40px;
+        }
+
+        .testimonial-content::before,
+        .testimonial-content::after {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(0, 168, 150, 0.2);
+            position: absolute;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-content::before {
+            top: -30px;
+            left: 0;
+        }
+
+        .testimonial-content::after {
+            content: '"';
+            bottom: -60px;
+            right: 0;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-author img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 3px solid var(--secondary-color);
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .rating {
+            color: var(--accent-color);
+            margin-top: 8px;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-nav:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        /* --- Sección de FAQ --- */
+        .faq-section {
+            background-color: var(--light-blue);
+            position: relative;
+        }
+
+        .accordion {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .accordion-header {
+            background-color: var(--white);
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: #f0f8ff;
+        }
+
+        .accordion-header h4 {
+            margin: 0;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .accordion-header i {
+            transition: transform 0.3s ease;
+            color: var(--secondary-color);
+        }
+
+        .accordion-item.active .accordion-header i {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            background: var(--white);
+        }
+
+        .accordion-item.active .accordion-content {
+            padding: 25px;
+            max-height: 500px;
+        }
+
+        /* --- Sección de Contacto --- */
+        .contact-section {
+            background: var(--primary-gradient);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 3px;
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            margin-right: 15px;
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            min-width: 25px;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.4s ease;
+            font-size: 1.3rem;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .contact-form {
+            background: var(--surface);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-form h3 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(0, 168, 150, 0.2);
+            background: var(--white);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .limit-note {
+            background-color: var(--warning);
+            color: var(--black);
+            padding: 20px;
+            border-radius: 10px;
+            display: block;
+            margin-top: 25px;
+            font-weight: 700;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .limit-note i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* --- Pie de Página --- */
+        .footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 70px 0 30px;
+            position: relative;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 3px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 8px;
+            text-decoration: none;
+        }
+
+        .footer-links a i {
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            color: #aaa;
+        }
+
+        /* --- Botón para volver arriba --- */
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-gradient);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- Progress Bar de Navegación --- */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: transparent;
+            z-index: 1001;
+        }
+
+        .progress-bar {
+            height: 5px;
+            background: var(--accent-color);
+            width: 0%;
+            transition: width 0.2s ease;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .instructor-profile {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .testimonial-slide {
+                padding: 50px 40px;
+            }
+            
+            .instructor-profile {
+                flex-direction: column;
+            }
+            
+            .instructor-img {
+                max-width: 450px;
+                margin: 0 auto 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-container {
+                padding: 0 15px;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(0, 95, 115, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                transition: all 0.5s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 0 0 30px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero {
+                min-height: 600px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-slide {
+                padding: 40px 30px;
+            }
+            
+            .testimonial-content {
+                padding: 0 20px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .logo img {
+                height: 35px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                margin-bottom: 40px;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-number {
+                font-size: 2.8rem;
+            }
+            
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+                bottom: 25px;
+                right: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="background-canvas"></canvas>
+    
+    <!-- Progress Bar de Navegación -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Header y Navegación -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="#" class="logo">
+                    <img src="images/logo.png" alt="Caracola Marina Logo">
+                    Caracola Marina
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#inicio" class="active">Inicio</a></li>
+                    <li><a href="#cursos">Cursos</a></li>
+                    <li><a href="#instructor">Instructora</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#faq">Preguntas</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hero" id="inicio">
+            <div class="hero-content">
+                <h1>Descubre el Mundo Submarino</h1>
+                <p>Certificaciones internacionales IANTD con instructores profesionales. Aprende a bucear de forma segura y divertida en los mejores lugares de México.</p>
+                <div class="hero-buttons">
+                    <a href="#cursos" class="btn">Ver Cursos</a>
+                    <a href="#contacto" class="btn btn-accent">Contactar Instructor</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Cursos -->
+    <section class="section courses" id="cursos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Cursos de Buceo</h2>
+                <p>Ofrecemos una variedad de cursos para todos los niveles, desde principiantes hasta buzos avanzados.</p>
+            </div>
+
+            <div class="course-grid">
+                <div class="course-card">
+                    <div class="course-card-img">
+                        <img src="images/course-open-water.jpg" alt="Curso Open Water">
+                    </div>
+                    <div class="course-card-content">
+                        <h3>Open Water Diver</h3>
+                        <p>Tu primera certificación internacional que te permite bucear hasta 18 metros en cualquier parte del mundo.</p>
+                        <div class="course-price">$4,500 MXN</div>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> Duración: 1 mes</li>
+                            <li><i class="fas fa-check-circle"></i> 5 sesiones teóricas</li>
+                            <li><i class="fas fa-check-circle"></i> 5 sesiones en alberca</li>
+                            <li><i class="fas fa-check-circle"></i> 4 inmersiones en mar</li>
+                        </ul>
+                        <a href="#contacto" class="btn">Más Información</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-card-img">
+                        <img src="images/course-advanced.jpg" alt="Curso Advanced">
+                    </div>
+                    <div class="course-card-content">
+                        <h3>Advanced Adventurer</h3>
+                        <p>Amplía tus límites y aprende técnicas avanzadas para bucear hasta 30 metros de profundidad.</p>
+                        <div class="course-price">$3,800 MXN</div>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> Duración: 2 semanas</li>
+                            <li><i class="fas fa-check-circle"></i> 5 inmersiones especializadas</li>
+                            <li><i class="fas fa-check-circle"></i> Navegación submarina</li>
+                            <li><i class="fas fa-check-circle"></i> Buceo nocturno</li>
+                        </ul>
+                        <a href="#contacto" class="btn">Más Información</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-card-img">
+                        <img src="images/course-rescue.jpg" alt="Curso Rescue">
+                    </div>
+                    <div class="course-card-content">
+                        <h3>Rescue Diver</h3>
+                        <p>Aprende prevención y manejo de problemas, primeros auxilios y técnicas de rescate.</p>
+                        <div class="course-price">$5,200 MXN</div>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> Duración: 3 semanas</li>
+                            <li><i class="fas fa-check-circle"></i> 10 módulos teóricos</li>
+                            <li><i class="fas fa-check-circle"></i> 8 ejercicios prácticos</li>
+                            <li><i class="fas fa-check-circle"></i> Certificación EFR incluida</li>
+                        </ul>
+                        <a href="#contacto" class="btn">Más Información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Información Detallada -->
+    <section class="section info-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Información Detallada del Curso Open Water</h2>
+                <p>Todo lo que necesitas saber sobre nuestro curso más popular.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>¿Qué Incluye?</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Instrucción teórica y práctica profesional</li>
+                        <li><i class="fas fa-check"></i> Honorarios de los instructores</li>
+                        <li><i class="fas fa-check"></i> Material didáctico (manual, bitácora y tabla)</li>
+                        <li><i class="fas fa-check"></i> Renta de equipo SCUBA (tanque, chaleco y regulador)</li>
+                        <li><i class="fas fa-check"></i> Préstamo de cinturón con lastres</li>
+                        <li><i class="fas fa-check"></i> Seguro de buceo para estudiantes (DAN)</li>
+                    </ul>
+                </div>
+
+                <div class="info-card negative">
+                    <h3>No Incluye</h3>
+                    <ul>
+                        <li><i class="fas fa-times"></i> Salida de certificación al mar (4 buceos)</li>
+                        <li><i class="fas fa-times"></i> Equipo básico personal (aletas, visor y snorkel)</li>
+                        <li><i class="fas fa-times"></i> Renta de traje de neopreno</li>
+                        <li><i class="fas fa-times"></i> Trámite de credencial de buzo certificado internacional</li>
+                        <li><i class="fas fa-times"></i> Transporte a sitios de buceo</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Requisitos</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Tener 10 años de edad en adelante</li>
+                        <li><i class="fas fa-check"></i> Saber nadar (no es necesario ser un experto)</li>
+                        <li><i class="fas fa-check"></i> Examen médico que autorice la práctica de buceo</li>
+                        <li><i class="fas fa-check"></i> No padecer: asma, sinusitis, problemas cardiacos, epilepsia</li>
+                        <li><i class="fas fa-check"></i> No estar embarazada</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Estadísticas -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">Estudiantes Certificados</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">% Satisfacción</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Instructor -->
+    <section class="section instructor-section" id="instructor">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestra Instructora</h2>
+                <p>Conoce a la profesional que guiará tu aprendizaje</p>
+            </div>
+            <div class="instructor-profile">
+                <div class="instructor-img">
+                    <img src="images/instructor.jpg" alt="Yazmín C. Osorio">
+                </div>
+                <div class="instructor-info">
+                    <h3>Yazmín C. Osorio</h3>
+                    <p class="certification">Instructora IANTD #5047</p>
+                    <p>Con más de 15 años de experiencia en buceo recreativo y técnico, Yazmín ha formado a cientos de buzos en México y el extranjero. Especialista en buceo profundo y en cuevas, su pasión es compartir la belleza del mundo submarino de forma segura y responsable.</p>
+                    <div class="instructor-timeline">
+                        <div class="timeline-item">
+                            <h4>2020 - Presente</h4>
+                            <p>Instructora Trainer IANTD</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>2015 - 2020</h4>
+                            <p>Instructora de Buceo Técnico</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>2010</h4>
+                            <p>Certificación como Open Water Scuba Instructor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Galería -->
+    <section class="section gallery-section" id="galeria">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galería de Nuestros Buceos</h2>
+                <p>Mira algunos momentos de nuestras aventuras submarinas.</p>
+            </div>
+
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="images/gallery1.jpg" alt="Buceo en arrecife" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery2.jpg" alt="Estudiantes de buceo" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery3.jpg" alt="Buzo nadando" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery4.jpg" alt="Vida marina" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery5.jpg" alt="Equipo de buceo" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery6.jpg" alt="Buceo en cueva" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <span class="close-lightbox">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section class="section testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lo que Dicen Nuestros Estudiantes</h2>
+                <p>Experiencias reales de personas que han tomado nuestros cursos.</p>
+            </div>
+
+            <div class="testimonials-container">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <p>Tomé el curso Open Water con Caracola Marina y fue una experiencia increíble. Los instructores son muy profesionales y pacientes. Ahora puedo bucear en cualquier parte del mundo con mi certificación IANTD. Las sesiones prácticas fueron muy bien estructuradas y me sentí seguro en todo momento.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial1.jpg" alt="Ana Martínez">
+                        <div class="author-info">
+                            <h4>Ana Martínez</h4>
+                            <p>Open Water Diver - 2024</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>El curso Rescue Diver cambió completamente mi perspectiva del buceo. Aprendí a prevenir y manejar situaciones de emergencia. La instructora Yazmín tiene un conocimiento impresionante y sabe transmitirlo muy bien. Las prácticas fueron desafiantes pero muy gratificantes. ¡Totalmente recomendado!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial2.jpg" alt="Carlos Rodríguez">
+                        <div class="author-info">
+                            <h4>Carlos Rodríguez</h4>
+                            <p>Rescue Diver - 2023</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>Hice el Advanced Adventurer después de mi Open Water y fue genial. El buceo nocturno es una experiencia mágica que todos deberían vivir. Recomiendo totalmente a Caracola Marina por su profesionalismo y ambiente familiar. Yazmín es una instructora excepcional que se preocupa genuinamente por sus estudiantes.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial3.jpg" alt="Luisa Fernández">
+                        <div class="author-info">
+                            <h4>Luisa Fernández</h4>
+                            <p>Advanced Adventurer - 2024</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-nav prev">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="testimonial-nav next">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de FAQ -->
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Preguntas Frecuentes</h2>
+                <p>Resuelve tus dudas sobre nuestros cursos de buceo.</p>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>¿Necesito saber nadar muy bien para tomar el curso?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>No es necesario ser un nadador olímpico, pero debes sentirte cómodo en el agua. Como requisito, deberás nadar 200 metros sin parar (cualquier estilo) y flotar por 10 minutos. Nuestros instructores te ayudarán a mejorar tus habilidades acuáticas si es necesario.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>¿Qué equipo necesito comprar para el curso?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Para el curso Open Water necesitarás tu equipo personal básico: aletas, visor y snorkel. El resto del equipo (tanque, chaleco, regulador) se proporciona durante el curso. Te asesoraremos para que compres equipo de calidad que se ajuste a tu presupuesto.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>¿Dónde realizan las salidas de certificación al mar?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Realizamos nuestras salidas de certificación en los mejores sitios de buceo de México, principalmente en Veracruz, Cancún y Baja California. El destino depende de la temporada y las condiciones climáticas. Todos nuestros sitios cuentan con infraestructura adecuada para la formación de buzos.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>¿La certificación IANTD es reconocida internacionalmente?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Sí, la International Association of Nitrox and Technical Divers (IANTD) es una de las agencias de certificación más reconocidas mundialmente. Tu credencial Open Water Diver será aceptada en centros de buceo, operadoras y resorts en cualquier parte del mundo.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>¿Puedo bucear si uso lentes?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Sí, hay varias opciones: puedes usar lentes de contacto bajo la máscara de buceo (se recomienda desechables), o podemos encargar una máscara con lentes correctivos según tu graduación. Muchos de nuestros estudiantes usan lentes y bucean sin problemas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section class="section contact-section" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contacto</h2>
+                <p>¿Listo para comenzar tu aventura submarina? Contáctanos hoy mismo.</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <p><i class="fas fa-user"></i> <strong>Instructora:</strong> Yazmín C. Osorio (IANTD 5047)</p>
+                    <p><i class="fas fa-phone"></i> <strong>Teléfono / WhatsApp:</strong> 55-3313-3178</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@caracolamarina.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Ubicación:</strong> Ciudad de México, México</p>
+                    <p><i class="fas fa-clock"></i> <strong>Horario:</strong> Lunes a Viernes 9:00 - 18:00</p>
+
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/525533133178" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Envíanos un Mensaje</h3>
+                    <form id="whatsappForm">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="course">Curso de Interés</label>
+                            <select id="course" name="course" class="form-control" required>
+                                <option value="">Selecciona un curso</option>
+                                <option value="Open Water Diver">Open Water Diver</option>
+                                <option value="Advanced Adventurer">Advanced Adventurer</option>
+                                <option value="Rescue Diver">Rescue Diver</option>
+                                <option value="Especialidades">Cursos de Especialidad</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+                        </button>
+                    </form>
+                    
+                    <div class="limit-note">
+                        <i class="fas fa-exclamation-circle"></i> ¡Cupo limitado a 10 personas por curso! Reserva tu lugar con anticipación.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Caracola Marina</h4>
+                    <p>Escuela de buceo profesional certificada por IANTD. Ofrecemos cursos desde principiantes hasta instructores en la Ciudad de México.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/525533133178" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Cursos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#cursos"><i class="fas fa-chevron-right"></i> Open Water Diver</a></li>
+                        <li><a href="#cursos"><i class="fas fa-chevron-right"></i> Advanced Adventurer</a></li>
+                        <li><a href="#cursos"><i class="fas fa-chevron-right"></i> Rescue Diver</a></li>
+                        <li><a href="#cursos"><i class="fas fa-chevron-right"></i> Especialidades</a></li>
+                        <li><a href="#cursos"><i class="fas fa-chevron-right"></i> Cursos para Niños</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="#cursos"><i class="fas fa-chevron-right"></i> Cursos</a></li>
+                        <li><a href="#instructor"><i class="fas fa-chevron-right"></i> Instructora</a></li>
+                        <li><a href="#galeria"><i class="fas fa-chevron-right"></i> Galería</a></li>
+                        <li><a href="#faq"><i class="fas fa-chevron-right"></i> Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:5533133178"><i class="fas fa-phone"></i> 55-3313-3178</a></li>
+                        <li><a href="mailto:info@caracolamarina.com"><i class="fas fa-envelope"></i> info@caracolamarina.com</a></li>
+                        <li><a href="https://wa.me/525533133178"><i class="fab fa-whatsapp"></i> Envíanos un WhatsApp</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> CDMX, México</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Caracola Marina. Todos los derechos reservados. | <a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón para volver arriba -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // --- Script para Animación de Canvas ---
+        const canvas = document.getElementById('background-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let bubbles = [];
+
+        function addBubble() {
+            bubbles.push({
+                x: Math.random() * canvas.width,
+                y: canvas.height + 10,
+                radius: Math.random() * 5 + 2,
+                speedY: Math.random() * 2 + 1,
+                opacity: Math.random() * 0.5 + 0.2,
+                sway: Math.random() * 2 - 1
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < bubbles.length; i++) {
+                let bubble = bubbles[i];
+                ctx.beginPath();
+                ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(173, 216, 230, ${bubble.opacity})`;
+                ctx.fill();
+                
+                bubble.y -= bubble.speedY;
+                bubble.x += bubble.sway * 0.2;
+                
+                if (bubble.y < -10) {
+                    bubbles.splice(i, 1);
+                    i--;
+                }
+            }
+
+            if (Math.random() < 0.3) {
+                addBubble();
+            }
+            
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // --- Script para Menú Responsive ---
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navbar = document.querySelector('.navbar');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Efecto de scroll en navbar
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // --- Scroll Spy para menú activo ---
+        const sections = document.querySelectorAll('section');
+        const navLinksItems = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinksItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').includes(current)) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // --- Script para Acordeón FAQ ---
+        const accordionItems = document.querySelectorAll('.accordion-item');
+
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            
+            header.addEventListener('click', () => {
+                const currentlyActive = document.querySelector('.accordion-item.active');
+                
+                if (currentlyActive && currentlyActive !== item) {
+                    currentlyActive.classList.remove('active');
+                }
+                
+                item.classList.toggle('active');
+            });
+        });
+
+        // --- Script para Botón Volver Arriba ---
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        // --- Progress Bar de Navegación ---
+        const progressBar = document.getElementById('progress-bar');
+
+        window.addEventListener('scroll', () => {
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const progress = (window.pageYOffset / totalHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        // --- Script para Formulario WhatsApp ---
+        const whatsappForm = document.getElementById('whatsappForm');
+        const submitBtn = whatsappForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+
+        whatsappForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validación básica
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            
+            if (!name || !phone) {
+                alert('Por favor, completa los campos obligatorios: Nombre y Teléfono');
+                return;
+            }
+            
+            // Mostrar loader
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.disabled = true;
+            
+            // Simular envío (en realidad es instantáneo, pero para feedback)
+            setTimeout(() => {
+                const nameEnc = encodeURIComponent(name);
+                const email = encodeURIComponent(document.getElementById('email').value);
+                const phoneEnc = encodeURIComponent(phone);
+                const course = encodeURIComponent(document.getElementById('course').value);
+                const message = encodeURIComponent(document.getElementById('message').value);
+                
+                const whatsappUrl = `https://wa.me/525533133178?text=
+                    *Nombre:* ${nameEnc}%0A
+                    *Email:* ${email}%0A
+                    *Teléfono:* ${phoneEnc}%0A
+                    *Curso de Interés:* ${course}%0A
+                    *Mensaje:* ${message}`.replace(/\s+/g, '');
+                
+                window.open(whatsappUrl, '_blank');
+                
+                // Restaurar botón
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                
+                // Mostrar mensaje de éxito
+                alert('¡Gracias! Serás redirigido a WhatsApp para completar tu consulta.');
+            }, 1000);
+        });
+
+        // --- Lightbox para Galería ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeLightbox = document.querySelector('.close-lightbox');
+
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'block';
+                lightboxImg.src = img.src;
+                setTimeout(() => {
+                    lightbox.classList.add('active');
+                }, 10);
+            });
+        });
+
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+            }, 400);
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                }, 400);
+            }
+        });
+
+        // --- Carousel de Testimonios ---
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            testimonialSlides.forEach(slide => slide.classList.remove('active'));
+            
+            currentSlide = (n + testimonialSlides.length) % testimonialSlides.length;
+            
+            testimonialSlides[currentSlide].classList.add('active');
+        }
+
+        prevBtn.addEventListener('click', () => {
+            showSlide(currentSlide - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            showSlide(currentSlide + 1);
+        });
+
+        // Auto slide
+        setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 7000);
+
+        // --- Contadores Animados ---
+        function animateCounter() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const increment = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 10);
+                    } else {
+                        counter.innerText = target + '+';
+                    }
+                };
+                
+                updateCount();
+            });
+        }
+
+        // Activar cuando la sección sea visible
+        const statsSection = document.querySelector('.stats-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter();
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(statsSection);
+
+        // Iniciar animación del canvas
+        animate();
+    </script>
+
+</body>
+</html>
