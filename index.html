@@ -198,10 +198,12 @@
             opacity: 0.7;
         }
 
-        /* --- Header y Navegación con Glassmorphism --- */
+        /* --- Header y Navegación Mejorada --- */
         .header {
             position: relative;
             overflow: hidden;
+            height: 100vh;
+            min-height: 700px;
         }
 
         .navbar {
@@ -209,9 +211,9 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(0, 95, 115, 0.7);
+            background: rgba(0, 95, 115, 0.9);
             backdrop-filter: blur(10px);
-            padding: 20px 0;
+            padding: 15px 0;
             z-index: 1000;
             transition: all 0.4s ease;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -220,7 +222,7 @@
 
         .navbar.scrolled {
             background: rgba(0, 95, 115, 0.95);
-            padding: 12px 0;
+            padding: 10px 0;
         }
 
         .navbar-container {
@@ -241,11 +243,22 @@
             display: flex;
             align-items: center;
             letter-spacing: -0.5px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .logo img {
             height: 45px;
             margin-right: 12px;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: rotate(5deg);
         }
 
         .nav-links {
@@ -265,6 +278,13 @@
             transition: all 0.3s ease;
             padding: 8px 0;
             position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a i {
+            margin-right: 8px;
+            font-size: 1.1rem;
         }
 
         .nav-links a:hover {
@@ -272,16 +292,16 @@
             text-decoration: none;
         }
 
-        /* Mejorado el efecto hover del encabezado */
+        /* Efecto hover mejorado */
         .nav-links a::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 0;
-            height: 3px; /* Grosor aumentado */
+            height: 3px;
             background: var(--accent-color);
-            transition: width 0.4s ease, background 0.4s ease; /* Animación mejorada */
+            transition: width 0.4s ease, background 0.4s ease;
             transform-origin: left;
         }
 
@@ -300,12 +320,17 @@
             cursor: pointer;
             color: white;
             font-size: 1.8rem;
+            transition: transform 0.3s ease;
         }
 
-        /* --- Hero Section con Animación --- */
+        .hamburger:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- Hero Section con Animación Mejorada --- */
         .hero {
             background: linear-gradient(135deg, rgba(0, 95, 115, 0.8), rgba(0, 168, 150, 0.6)), 
-                        url('imgs/coral1.jpg') no-repeat center center/cover;
+                        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
             height: 100vh;
             min-height: 700px;
             display: flex;
@@ -479,7 +504,7 @@
             color: var(--gray);
         }
 
-        /* Reemplazado precio con mensaje de consultar */
+        /* Botón de consulta precio mejorado */
         .course-price-info {
             font-size: 1.3rem;
             font-weight: 700;
@@ -490,6 +515,16 @@
             border-radius: 30px;
             background: rgba(0, 168, 150, 0.1);
             animation: pulse 2s infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-align: center;
+            width: 100%;
+        }
+
+        .course-price-info:hover {
+            background: rgba(0, 168, 150, 0.2);
+            transform: scale(1.05);
         }
 
         @keyframes pulse {
@@ -1404,7 +1439,7 @@
         <div class="progress-bar" id="progress-bar"></div>
     </div>
 
-    <!-- Header y Navegación -->
+    <!-- Header y Navegación Mejorado -->
     <header class="header">
         <nav class="navbar">
             <div class="navbar-container">
@@ -1413,13 +1448,13 @@
                     Caracola Marina
                 </a>
                 <ul class="nav-links">
-                    <li><a href="#inicio" class="active">Inicio</a></li>
-                    <li><a href="#cursos">Cursos</a></li>
-                    <li><a href="#instructor">Instructora</a></li>
-                    <li><a href="#galeria">Galería</a></li>
-                    <li><a href="#testimonios">Testimonios</a></li>
-                    <li><a href="#faq">Preguntas</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#inicio" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="#cursos"><i class="fas fa-graduation-cap"></i> Cursos</a></li>
+                    <li><a href="#instructor"><i class="fas fa-user"></i> Instructora</a></li>
+                    <li><a href="#galeria"><i class="fas fa-images"></i> Galería</a></li>
+                    <li><a href="#testimonios"><i class="fas fa-comments"></i> Testimonios</a></li>
+                    <li><a href="#faq"><i class="fas fa-question-circle"></i> Preguntas</a></li>
+                    <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
@@ -1446,7 +1481,7 @@
         </div>
     </section>
 
-    <!-- Sección de Cursos -->
+    <!-- Sección de Cursos con acceso a WhatsApp -->
     <section class="section courses" id="cursos">
         <div class="container">
             <div class="section-title">
@@ -1457,14 +1492,13 @@
             <div class="course-grid">
                 <div class="course-card">
                     <div class="course-card-img">
-                        <!-- Imagen de portada del curso Open Water -->
-                        <img src="imgs/рыжэ.jpg" alt="Curso Open Water">
+                        <img src="imgs/snsi_logo.jpg" alt="Curso Open Water">
                     </div>
                     <div class="course-card-content">
                         <h3>Open Water Diver</h3>
                         <p>Tu primera certificación internacional que te permite bucear hasta 18 metros en cualquier parte del mundo.</p>
                         <p class="quote-small">"Existen dos tipos de buzos: Los que se hacen pipí en el traje... y los que mienten"</p>
-                        <div class="course-price-info">Consulta precio</div>
+                        <button class="course-price-info" data-course="Open Water Diver">Consulta precio</button>
                         <ul class="course-features">
                             <li><i class="fas fa-check-circle fa-icon-optimized"></i> Duración: 1 mes</li>
                             <li><i class="fas fa-book fa-icon-optimized"></i> 5 sesiones teóricas</li>
@@ -1477,14 +1511,13 @@
 
                 <div class="course-card">
                     <div class="course-card-img">
-                        <!-- Imagen de portada del curso Rescue -->
-                        <img src="imgs/солай.jpg" alt="Curso Rescue">
+                        <img src="imgs/snsi_logo.jpg" alt="Curso Rescue">
                     </div>
                     <div class="course-card-content">
                         <h3>Rescue Diver</h3>
                         <p>Aprende prevención y manejo de problemas, primeros auxilios y técnicas de rescate.</p>
                         <p class="quote-small">"Que sería de nosotros sin el nitrógeno residual!"</p>
-                        <div class="course-price-info">Consulta precio</div>
+                        <button class="course-price-info" data-course="Rescue Diver">Consulta precio</button>
                         <ul class="course-features">
                             <li><i class="fas fa-calendar-alt fa-icon-optimized"></i> Duración: 3 semanas</li>
                             <li><i class="fas fa-book-open fa-icon-optimized"></i> 10 módulos teóricos</li>
@@ -1497,14 +1530,13 @@
 
                 <div class="course-card">
                     <div class="course-card-img">
-                        <!-- Imagen de portada del curso Advanced -->
-                        <img src="imgs/полископанельн а.jpg" alt="Curso Advanced">
+                        <img src="imgs/snsi_logo.jpg" alt="Curso Advanced">
                     </div>
                     <div class="course-card-content">
                         <h3>Advanced Adventurer</h3>
                         <p>Amplía tus límites y aprende técnicas avanzadas para bucear hasta 30 metros de profundidad.</p>
                         <p class="quote-small">"Porque lo bailado y lo buceado... ¡Quién chingaos nos lo quita?!"</p>
-                        <div class="course-price-info">Consulta precio</div>
+                        <button class="course-price-info" data-course="Advanced Adventurer">Consulta precio</button>
                         <ul class="course-features">
                             <li><i class="fas fa-clock fa-icon-optimized"></i> Duración: 2 semanas</li>
                             <li><i class="fas fa-water fa-icon-optimized"></i> 5 inmersiones especializadas</li>
@@ -1652,13 +1684,13 @@
 
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="imgs/coral1.jpg" alt="Coral submarino" loading="lazy">
+                    <img src="imgs/coral2.jpg" alt="Coral submarino" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="imgs/coral2.jpg" alt="Arrecife de coral" loading="lazy">
+                    <img src="imgs/3buzos.jpg" alt="Arrecife de coral" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="imgs/coral3.jpg" alt="Vida marina" loading="lazy">
+                    <img src="imgs/coral1.jpg" alt="Vida marina" loading="lazy">
                 </div>
                 <div class="gallery-item">
                     <img src="imgs/coral4.jpg" alt="Buceo profundo" loading="lazy">
@@ -1667,7 +1699,7 @@
                     <img src="imgs/alacranesbuzos.jpg" alt="Grupo de buzos" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="imgs/3buzos.jpg" alt="Buzos explorando" loading="lazy">
+                    <img src="imgs/coral3.jpg" alt="Buzos explorando" loading="lazy">
                 </div>
             </div>
         </div>
@@ -1694,7 +1726,7 @@
                         <p>Tomé el curso Open Water con Caracola Marina y fue una experiencia increíble. Los instructores son muy profesionales y pacientes. Ahora puedo bucear en cualquier parte del mundo con mi certificación. Las sesiones prácticas fueron muy bien estructuradas y me sentí seguro en todo momento.</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="imgs/buzo.jpg" alt="Ana Martínez">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Ana Martínez">
                         <div class="author-info">
                             <h4>Ana Martínez</h4>
                             <p>Open Water Diver - 2024</p>
@@ -1714,7 +1746,7 @@
                         <p>El curso Rescue Diver cambió completamente mi perspectiva del buceo. Aprendí a prevenir y manejar situaciones de emergencia. La instructora Yazmín tiene un conocimiento impresionante y sabe transmitirlo muy bien. Las prácticas fueron desafiantes pero muy gratificantes. ¡Totalmente recomendado!</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="imgs/3buzos.jpg" alt="Carlos Rodríguez">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Carlos Rodríguez">
                         <div class="author-info">
                             <h4>Carlos Rodríguez</h4>
                             <p>Rescue Diver - 2023</p>
@@ -1734,7 +1766,7 @@
                         <p>Hice el Advanced Adventurer después de mi Open Water y fue genial. El buceo nocturno es una experiencia mágica que todos deberían vivir. Recomiendo totalmente a Caracola Marina por su profesionalismo y ambiente familiar. Yazmín es una instructora excepcional que se preocupa genuinamente por sus estudiantes.</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="imgs/alacranesbuzos.jpg" alt="Luisa Fernández">
+                        <img src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Luisa Fernández">
                         <div class="author-info">
                             <h4>Luisa Fernández</h4>
                             <p>Advanced Adventurer - 2024</p>
@@ -2208,9 +2240,21 @@
 
         observer.observe(statsSection);
 
+        // --- Acceso directo a WhatsApp desde botones de consulta ---
+        const priceButtons = document.querySelectorAll('.course-price-info');
+        
+        priceButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const course = this.getAttribute('data-course');
+                const message = encodeURIComponent(`Hola, estoy interesado en el curso ${course}, ¿podrían darme más información y precio?`);
+                const whatsappUrl = `https://wa.me/525533133178?text=${message}`;
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+
         // Iniciar animación del canvas
         animate();
     </script>
 
 </body>
-</html>
+</html>X|
