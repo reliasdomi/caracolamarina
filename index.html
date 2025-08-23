@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap">
     <style>
-        /* --- Variables y Estilos Generales --- */
+        /* --- ESTILOS EXISTENTES (se mantienen igual) --- */
         :root {
             --primary-color: #005f73;
             --secondary-color: #00a896;
@@ -772,6 +772,52 @@
             margin-bottom: 5px;
         }
 
+        /* Nueva sección de habilidades y experiencia */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .skills-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .skills-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-blue);
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+
+        .skills-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skills-list li i {
+            margin-right: 12px;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            min-width: 24px;
+            text-align: center;
+        }
+
         /* --- Sección de Galería con Lightbox --- */
         .gallery-section {
             background-color: var(--light-blue);
@@ -968,6 +1014,7 @@
         }
 
         .accordion-header:hover {
+            background-color: #f0f8ff;
             background-color: #f0f8ff;
         }
 
@@ -1322,6 +1369,10 @@
                 max-width: 450px;
                 margin: 0 auto 30px;
             }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1628,7 +1679,7 @@
         </div>
     </section>
 
-    <!-- Sección de Instructor -->
+    <!-- Sección de Instructor - ACTUALIZADA -->
     <section class="section instructor-section" id="instructor">
         <div class="container">
             <div class="section-title">
@@ -1641,27 +1692,71 @@
                 </div>
                 <div class="instructor-info">
                     <h3>Yazmín C. Osorio</h3>
-                    <p class="certification">Instructora SNSI #5047</p>
-                    <p>Con más de 15 años de experiencia en buceo recreativo y técnico, Yazmín ha formado a cientos de buzos en México y el extranjero. Especialista en buceo profundo y en cuevas, su pasión es compartir la belleza del mundo submarino de forma segura y responsable.</p>
+                    <p class="certification">Instructora SNSI #5047 | Más de 1,500 inmersiones</p>
+                    <p>Ingeniera en Alimentos de formación y apasionada del buceo desde 1997. Con más de 20 años de experiencia en buceo recreativo y técnico, Yazmín ha formado a cientos de buzos en México. Especialista en buceo profundo y en cuevas, su pasión es compartir la belleza del mundo submarino de forma segura y responsable.</p>
                     <p class="quote">"Te voy a enseñar a bucear, te voy a enseñar a volar."</p>
+                    
                     <div class="instructor-timeline">
                         <div class="timeline-item">
-                            <h4>2024 - Presente</h4>
-                            <p>Instructora Trainer SNSI</p>
+                            <h4>2023 - Presente</h4>
+                            <p>HSA International Instructor #4559</p>
                         </div>
                         <div class="timeline-item">
-                            <h4>2020 - 2023</h4>
-                            <p>Instructora IANTD</p>
+                            <h4>2021</h4>
+                            <p>Cavern Diver SNSI</p>
                         </div>
                         <div class="timeline-item">
-                            <h4>2015 - 2020</h4>
-                            <p>Instructora de Buceo Técnico</p>
+                            <h4>2015</h4>
+                            <p>CFR/AED/First Aid Instructor EMERGENCY first response</p>
                         </div>
                         <div class="timeline-item">
-                            <h4>2010</h4>
-                            <p>Certificación como Open Water Scuba Instructor</p>
+                            <h4>2006</h4>
+                            <p>Fundación de la Escuela de Buceo Caracola Marina</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>2005</h4>
+                            <p>Instructor Nitrox de Buceo IANTD #5047</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>2001</h4>
+                            <p>DiveCon SSI</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>1997</h4>
+                            <p>Buzo Recreativo SSI - Inicio de su carrera en el buceo</p>
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Nueva sección de habilidades y formación -->
+            <div class="skills-grid">
+                <div class="skills-card">
+                    <h4>Formación Académica</h4>
+                    <ul class="skills-list">
+                        <li><i class="fas fa-graduation-cap fa-icon-optimized"></i> Ingeniería en Alimentos - UNAM, FES-Cuautitlán (1992)</li>
+                        <li><i class="fas fa-certificate fa-icon-optimized"></i> Posgrado en Conflictología y Mediación - Universidad Oberta de Cataluña (2011)</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-card">
+                    <h4>Habilidades Profesionales</h4>
+                    <ul class="skills-list">
+                        <li><i class="fas fa-people-arrows fa-icon-optimized"></i> Resolución, Manejo y prevención de conflictos</li>
+                        <li><i class="fas fa-users fa-icon-optimized"></i> Trabajo en Equipo</li>
+                        <li><i class="fas fa-chart-line fa-icon-optimized"></i> Liderazgo</li>
+                        <li><i class="fas fa-chalkboard-teacher fa-icon-optimized"></i> Formación de capital humano</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-card">
+                    <h4>Reconocimientos y Certificaciones</h4>
+                    <ul class="skills-list">
+                        <li><i class="fas fa-award fa-icon-optimized"></i> Impartidora de cursos CONOCER (ECO217)</li>
+                        <li><i class="fas fa-award fa-icon-optimized"></i> Diseñadora de Cursos CONOCER (EC00301)</li>
+                        <li><i class="fas fa-award fa-icon-optimized"></i> DiveMaster Instructor SNSI #26626</li>
+                        <li><i class="fas fa-award fa-icon-optimized"></i> Open Water Scuba Instructor PADI #358875</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -2052,6 +2147,7 @@
             navLinks.classList.toggle('active');
             hamburger.innerHTML = navLinks.classList.contains('active') ? 
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            // Nota el cierre correcto de la etiqueta: "</i>" en lugar de "'></i>"
         });
 
         // Cerrar menú al hacer clic en un enlace
@@ -2257,4 +2353,4 @@
     </script>
 
 </body>
-</html>X|
+</html>
