@@ -1334,6 +1334,36 @@
             border-left: 3px solid var(--secondary-color);
         }
 
+        /* --- Video Section --- */
+        .video-section {
+            background-color: var(--light-blue);
+            padding: 80px 0;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         /* --- Responsive Design --- */
         @media (max-width: 1200px) {
             .hero h1 {
@@ -1692,13 +1722,13 @@
                 </div>
                 <div class="instructor-info">
                     <h3>Yazmín C. Osorio</h3>
-                    <p class="certification">Instructora SNSI #5047 | Más de 1,500 inmersiones</p>
+                    <p class="certification">Instructora SNSI #26626 | Más de 1,500 inmersiones</p>
                     <p>Ingeniera en Alimentos de formación y apasionada del buceo desde 1997. Con más de 20 años de experiencia en buceo recreativo y técnico, Yazmín ha formado a cientos de buzos en México. Especialista en buceo profundo y en cuevas, su pasión es compartir la belleza del mundo submarino de forma segura y responsable.</p>
                     <p class="quote">"Te voy a enseñar a bucear, te voy a enseñar a volar."</p>
                     
                     <div class="instructor-timeline">
                         <div class="timeline-item">
-                            <h4>2023 - Presente</h4>
+                            <h4>2023</h4>
                             <p>HSA International Instructor #4559</p>
                         </div>
                         <div class="timeline-item">
@@ -1708,6 +1738,10 @@
                         <div class="timeline-item">
                             <h4>2015</h4>
                             <p>CFR/AED/First Aid Instructor EMERGENCY first response</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>2015</h4>
+                            <p>Open Water Scuba Instructor PADI #358875</p>
                         </div>
                         <div class="timeline-item">
                             <h4>2006</h4>
@@ -1729,8 +1763,23 @@
                 </div>
             </div>
             
-            <!-- Nueva sección de habilidades y formación -->
+            <!-- Nueva sección de experiencia -->
             <div class="skills-grid">
+                <div class="skills-card">
+                    <h4>Experiencia en Buceo</h4>
+                    <ul class="skills-list">
+                        <li><i class="fas fa-water fa-icon-optimized"></i> Buzo Recreativo desde 1997. SSI</li>
+                        <li><i class="fas fa-swimmer fa-icon-optimized"></i> DiveCon SSI 2001</li>
+                        <li><i class="fas fa-certificate fa-icon-optimized"></i> Instructor Nitrox de Buceo (IANTD) 2005. #5047</li>
+                        <li><i class="fas fa-school fa-icon-optimized"></i> Fundación de la Escuela de Buceo Caracola Marina 2006</li>
+                        <li><i class="fas fa-user-graduate fa-icon-optimized"></i> Open Water Scuba Instructor PADI #358875. 2015</li>
+                        <li><i class="fas fa-first-aid fa-icon-optimized"></i> CFR/AED/First Aid Instructor EMERGENCY first response 2015</li>
+                        <li><i class="fas fa-user-tie fa-icon-optimized"></i> HSA International Instructor #4559. 2023</li>
+                        <li><i class="fas fa-mountain fa-icon-optimized"></i> Cavern Diver SNSI. 2021</li>
+                        <li><i class="fas fa-award fa-icon-optimized"></i> Actualmente DiveMaster Instructor SNSI #26626</li>
+                    </ul>
+                </div>
+                
                 <div class="skills-card">
                     <h4>Formación Académica</h4>
                     <ul class="skills-list">
@@ -1740,23 +1789,35 @@
                 </div>
                 
                 <div class="skills-card">
-                    <h4>Habilidades Profesionales</h4>
+                    <h4>Habilidades y Reconocimientos</h4>
                     <ul class="skills-list">
                         <li><i class="fas fa-people-arrows fa-icon-optimized"></i> Resolución, Manejo y prevención de conflictos</li>
                         <li><i class="fas fa-users fa-icon-optimized"></i> Trabajo en Equipo</li>
                         <li><i class="fas fa-chart-line fa-icon-optimized"></i> Liderazgo</li>
                         <li><i class="fas fa-chalkboard-teacher fa-icon-optimized"></i> Formación de capital humano</li>
-                    </ul>
-                </div>
-                
-                <div class="skills-card">
-                    <h4>Reconocimientos y Certificaciones</h4>
-                    <ul class="skills-list">
                         <li><i class="fas fa-award fa-icon-optimized"></i> Impartidora de cursos CONOCER (ECO217)</li>
                         <li><i class="fas fa-award fa-icon-optimized"></i> Diseñadora de Cursos CONOCER (EC00301)</li>
-                        <li><i class="fas fa-award fa-icon-optimized"></i> DiveMaster Instructor SNSI #26626</li>
-                        <li><i class="fas fa-award fa-icon-optimized"></i> Open Water Scuba Instructor PADI #358875</li>
                     </ul>
+                </div>
+            </div>
+            
+            <!-- Nota sobre certificaciones -->
+            <div class="diving-cost-note">
+                <p><i class="fas fa-info-circle fa-icon-optimized"></i> <strong>Nota:</strong> Aunque tengo certificaciones en múltiples agencias, actualmente no estoy vigente en todas ellas.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección de Video -->
+    <section class="section video-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestras Aventuras Submarinas</h2>
+                <p>Mira un poco de lo que vivimos en nuestras inmersiones</p>
+            </div>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/gJS46AsGJGQ" title="Aventuras de buceo con Caracola Marina" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -1918,7 +1979,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="accordion-content">
-                        <p>Para el curso Open Water necesitarás tu equipo personal básico: aletas, visor y snorkel. El resto del equipo (tanque, chaleco, regulador) se proporciona durante el curso. Te asesoraremos para que compres equipo de calidad que se ajuste a tu presupuesto.</p>
+                        <p>Para el curso Open Water necesitarás tu equipo personal básico: aletas, visor and snorkel. El resto del equipo (tanque, chaleco, regulador) se proporciona durante el curso. Te asesoraremos para que compres equipo de calidad que se ajuste a tu presupuesto.</p>
                     </div>
                 </div>
 
@@ -1973,7 +2034,7 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Información de Contacto</h3>
-                    <p><i class="fas fa-user fa-icon-optimized"></i> <strong>Instructora:</strong> Yazmín C. Osorio (SNSI 5047)</p>
+                    <p><i class="fas fa-user fa-icon-optimized"></i> <strong>Instructora:</strong> Yazmín C. Osorio (SNSI 26626)</p>
                     <p><i class="fas fa-phone fa-icon-optimized"></i> <strong>Teléfono / WhatsApp:</strong> 55-3313-3178</p>
                     <p><i class="fas fa-map-marker-alt fa-icon-optimized"></i> <strong>Ubicación:</strong> Ciudad de México, México</p>
                     <p><i class="fas fa-clock fa-icon-optimized"></i> <strong>Horario:</strong> Lunes a Viernes 9:00 - 18:00</p>
@@ -2147,7 +2208,6 @@
             navLinks.classList.toggle('active');
             hamburger.innerHTML = navLinks.classList.contains('active') ? 
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-            // Nota el cierre correcto de la etiqueta: "</i>" en lugar de "'></i>"
         });
 
         // Cerrar menú al hacer clic en un enlace
