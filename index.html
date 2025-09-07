@@ -994,6 +994,7 @@
         .accordion {
             max-width: 900px;
             margin: 0 auto;
+            position: relative;
         }
 
         .accordion-item {
@@ -1014,7 +1015,6 @@
         }
 
         .accordion-header:hover {
-            background-color: #f0f8ff;
             background-color: #f0f8ff;
         }
 
@@ -1718,10 +1718,10 @@
             </div>
             <div class="instructor-profile">
                 <div class="instructor-img">
-                    <img src="imgs/instructorasentada.jpg" alt="Yazmín C. Osorio">
+                    <img src="imgs/instructorasentada.jpg" alt="Yazmín C. Osornio">
                 </div>
                 <div class="instructor-info">
-                    <h3>Yazmín C. Osorio</h3>
+                    <h3>Yazmín C. Osornio</h3>
                     <p class="certification">Instructora SNSI #26626 | Más de 1,500 inmersiones</p>
                     <p>Ingeniera en Alimentos de formación y apasionada del buceo desde 1997. Con más de 20 años de experiencia en buceo recreativo y técnico, Yazmín ha formado a cientos de buzos en México. Especialista en buceo profundo y en cuevas, su pasión es compartir la belleza del mundo submarino de forma segura y responsable.</p>
                     <p class="quote">"Te voy a enseñar a bucear, te voy a enseñar a volar."</p>
@@ -1784,7 +1784,7 @@
                     <h4>Formación Académica</h4>
                     <ul class="skills-list">
                         <li><i class="fas fa-graduation-cap fa-icon-optimized"></i> Ingeniería en Alimentos - UNAM, FES-Cuautitlán (1992)</li>
-                        <li><i class="fas fa-certificate fa-icon-optimized"></i> Posgrado en Conflictología y Mediación - Universidad Oberta de Cataluña (2011)</li>
+                        <li><i class="fas fa-certificate fa-icon-optimized"></i> Posgrado in Conflictología y Mediación - Universidad Oberta de Cataluña (2011)</li>
                     </ul>
                 </div>
                 
@@ -2031,7 +2031,7 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Información de Contacto</h3>
-                    <p><i class="fas fa-user fa-icon-optimized"></i> <strong>Instructora:</strong> Yazmín C. Osorio (SNSI 26626)</p>
+                    <p><i class="fas fa-user fa-icon-optimized"></i> <strong>Instructora:</strong> Yazmín C. Osornio (SNSI 26626)</p>
                     <p><i class="fas fa-phone fa-icon-optimized"></i> <strong>Teléfono / WhatsApp:</strong> 55-3313-3178</p>
                     <p><i class="fas fa-map-marker-alt fa-icon-optimized"></i> <strong>Ubicación:</strong> Ciudad de México, México</p>
                     <p><i class="fas fa-clock fa-icon-optimized"></i> <strong>Horario:</strong> Lunes a Viernes 9:00 - 18:00</p>
@@ -2382,7 +2382,7 @@
 
         // Activar cuando la sección sea visible
         const statsSection = document.querySelector('.stats-section');
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     animateCounter();
