@@ -994,7 +994,6 @@
         .accordion {
             max-width: 900px;
             margin: 0 auto;
-            position: relative;
         }
 
         .accordion-item {
@@ -1015,6 +1014,7 @@
         }
 
         .accordion-header:hover {
+            background-color: #f0f8ff;
             background-color: #f0f8ff;
         }
 
@@ -1784,7 +1784,7 @@
                     <h4>Formación Académica</h4>
                     <ul class="skills-list">
                         <li><i class="fas fa-graduation-cap fa-icon-optimized"></i> Ingeniería en Alimentos - UNAM, FES-Cuautitlán (1992)</li>
-                        <li><i class="fas fa-certificate fa-icon-optimized"></i> Posgrado in Conflictología y Mediación - Universidad Oberta de Cataluña (2011)</li>
+                        <li><i class="fas fa-certificate fa-icon-optimized"></i> Posgrado en Conflictología y Mediación - Universidad Oberta de Cataluña (2011)</li>
                     </ul>
                 </div>
                 
@@ -2382,7 +2382,7 @@
 
         // Activar cuando la sección sea visible
         const statsSection = document.querySelector('.stats-section');
-        const observer = new IntersectionObserver((entries) {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     animateCounter();
